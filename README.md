@@ -28,7 +28,7 @@ Provide more useful filters/directives for vue.js
         * it **should** only be used with \<input\> tag.
     * usage:
     
-    ```html
+        ```html
           
               //html
               <li><input v-focus="hasFocus" type="text" style="width:50px;" value="blur me!"> HasFocus: {{hasFocus}}</li>
@@ -42,7 +42,29 @@ Provide more useful filters/directives for vue.js
                   })
           
           ```
+
 * maxStringLen:
+    * description:
+        * in project,we always need to limit string's length,this filter can help you do this easily
+    * usage:
+        
+    ```js
+    
+        //html
+        <li>usage of maxStringLen: {{longString}}=> {{ longString|maxStringLen 12 "..."}}</li>
+        
+        //.js
+         var vm = new Vue({
+                el: '#demo',
+                data: {
+                    longString:"i am a long long string!"
+                }
+            })
+    
+    ```
+    
+    * will render:
+    <li>usage of maxStringLen: i am a long long string!=&gt; i am a long ...</li>
 * showTime:
 
 

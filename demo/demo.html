@@ -6,6 +6,7 @@
     <script src="vue.js"></script>
     <script src="../vue.extension.hideString.js"></script>
     <script src="../vue.extension.focus.js"></script>
+    <script src="../vue.extension.maxStringLen.js"></script>
 </head>
 <body>
 
@@ -13,7 +14,7 @@
     <ul>
         <li>usage of hideString: {{phoneNo}}=> {{ phoneNo|hideString 3 4 "*"}}</li>
         <li><input v-focus="hasFocus" type="text" style="width:50px;" value="blur me!"> HasFocus: {{hasFocus}}</li>
-        <li></li>
+        <li>usage of maxStringLen: {{longString}}=> {{ longString|maxStringLen 12 "..."}}</li>
         <li></li>
         <li></li>
         <li></li>
@@ -26,6 +27,7 @@
         el: '#demo',
         data: {
             phoneNo:"13312345678",
+            longString:"i am a long long string!",
             hasFocus:false
         }
     })
