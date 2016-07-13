@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo vue.extension.js</title>
+    <script src="vue.js"></script>
+    <script src="../vue.extention.hideString.js"></script>
+</head>
+<body>
+
+<div id="demo">
+    <ul>
+        <li>usage of hideString: {{phoneNo}}=> {{ phoneNo|hideString 3 4 "*"}}</li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+<script>
+
+    var vm = new Vue({
+        el: '#demo',
+        data: {
+            phoneNo:"13312345678"
+        }
+    })
+
+</script>
+
+</body>
+</html>
