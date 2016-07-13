@@ -19,8 +19,8 @@ Provide more useful filters/directives for vue.js
             })
     
     ```
-    * will render:
-    <li>usage of hideString: 13312345678=&gt; 133****678</li>
+        * will render:
+        <li>usage of hideString: 13312345678=&gt; 133****678</li>
 
 * focus:
     * description:
@@ -62,7 +62,7 @@ Provide more useful filters/directives for vue.js
             })
     
     ```
-    
+
     * will render:
     <li>usage of maxStringLen: i am a long long string!=&gt; i am a long ...</li>
     
@@ -85,7 +85,9 @@ Provide more useful filters/directives for vue.js
             })
     
     ```
-    
+
+    * will render
+    <li>format ="elapsed": Sun Jul 10 2016 10:00:00 GMT+0800 (CST)=&gt; 3天前</li>
     * format available:
         * "elapsed":this formatter will calculate the time elapsed since the Date
         
@@ -95,3 +97,25 @@ Provide more useful filters/directives for vue.js
 
 ##Directives
 * v-toggle-event:
+    * description:
+        * this directive can bind an event to an **prop of vm**,every time event fired,the binded value will change to opposite.
+        * it always used in **checkbox-like-control** situation.
+    * usage:
+    
+    ```js
+        //in html 
+        <li><button v-toggle-event:click="val">click me to toggle value</button>{{val}}</li>
+        
+        //in js
+        var vm = new Vue({
+                el: '#demo',
+                data: {
+                    val:false
+                }
+            })
+    
+    ```
+
+
+##Demo
+There is <a href="../demo">demo</a> which can show all the features. have fun with them ^_^

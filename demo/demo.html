@@ -8,6 +8,7 @@
     <script src="../vue.extension.focus.js"></script>
     <script src="../vue.extension.maxStringLen.js"></script>
     <script src="../vue.extension.formatDate.js"></script>
+    <script src="../vue.extension.toggleEvent.js"></script>
 </head>
 <body>
 
@@ -21,7 +22,7 @@
             <li>format ="elapsed": {{date}}=> {{ date|formatDate "elapsed" }}</li>
         </ul>
         </li>
-
+        <li><button v-toggle-event:click="val">click me to toggle value</button>{{val}}</li>
     </ul>
 </div>
 
@@ -33,7 +34,8 @@
             phoneNo:"13312345678",
             longString:"i am a long long string!",
             date:new Date("2016-07-10 10:00:00"),
-            hasFocus:false
+            hasFocus:false,
+            val:false
         }
     })
 
