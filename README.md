@@ -65,7 +65,32 @@ Provide more useful filters/directives for vue.js
     
     * will render:
     <li>usage of maxStringLen: i am a long long string!=&gt; i am a long ...</li>
-* showTime:
+    
+* formatDate:
+    * description:
+        * this filter can parse **Date** or **Date String** into other format
+    * usage:
+    
+    ```js
+    
+        //in html:
+        <li>format ="elapsed": {{date}}=> {{ date|formatDate "elapsed" }}</li>
+        
+        //in js:
+        var vm = new Vue({
+                el: '#demo',
+                data: {
+                    date:new Date("2016-07-10 10:00:00")
+                }
+            })
+    
+    ```
+    
+    * format available:
+        * "elapsed":this formatter will calculate the time elapsed since the Date
+        
+    * format need to develop:
+        * "yyyy-MM-dd HH:mm:sss" : 
 
 
 ##Directives
