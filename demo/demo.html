@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <title>demo vue.extension.js</title>
     <script src="vue.js"></script>
-    <script src="../vue.extention.hideString.js"></script>
+    <script src="../vue.extension.hideString.js"></script>
+    <script src="../vue.extension.focus.js"></script>
 </head>
 <body>
 
 <div id="demo">
     <ul>
         <li>usage of hideString: {{phoneNo}}=> {{ phoneNo|hideString 3 4 "*"}}</li>
-        <li></li>
+        <li><input v-focus="hasFocus" type="text" style="width:50px;" value="blur me!"> HasFocus: {{hasFocus}}</li>
         <li></li>
         <li></li>
         <li></li>
@@ -24,7 +25,8 @@
     var vm = new Vue({
         el: '#demo',
         data: {
-            phoneNo:"13312345678"
+            phoneNo:"13312345678",
+            hasFocus:false
         }
     })
 

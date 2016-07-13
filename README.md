@@ -23,6 +23,25 @@ Provide more useful filters/directives for vue.js
     <li>usage of hideString: 13312345678=&gt; 133****678</li>
 
 * focus:
+    * description:
+        * In Vue,there is no built-in binding like "v-blur" or "v-focus",so i make one.
+        * it **should** only be used with \<input\> tag.
+    * usage:
+    
+    ```html
+          
+              //html
+              <li><input v-focus="hasFocus" type="text" style="width:50px;" value="blur me!"> HasFocus: {{hasFocus}}</li>
+              
+              //.js
+               var vm = new Vue({
+                      el: '#demo',
+                      data: {
+                          hasFocus:false
+                      }
+                  })
+          
+          ```
 * maxStringLen:
 * showTime:
 
