@@ -1,7 +1,7 @@
 /**
  * Created by kaicui on 16/7/13.
  *
- * PS:该写法不适合2.5.2 以上版本
+ * PS:该写法适合2.5.2 以上版本
  */
 
 /**
@@ -14,27 +14,31 @@
  */
 Vue.directive('toggle-event', {
     twoWay: true,
-    bind: function () {
+    bind: function (el, binding, vnode) {
         var self = this;//save the this ref
 
         //当事件触发
-        self._handler = function () {
+        el._toggle_event_handler = function () {
             // 如果指令这样绑定 v-focus="a.b.c"
             // 它将用给定值设置 `vm.a.b.c`
             // self.set(!self.vm.$get(self.expression))
-            self.set(!self._watcher.get())
+            // vnode.context.$set(!vnode._watcher.get())
+            // vnode.context.$set(!binding.value)
+            vnode.context[binding.expression] = !vnode.context[binding.expression];
+            // vnode.set(!binding.value + el.vm)
+            // vnode.set(!binding.value)
         }
         // 准备工作
 
         //添加事件监听
-        self.el.addEventListener(self.arg, self._handler)
+        el.addEventListener(binding.arg, el._toggle_event_handler)
     },
     update: function (newValue, oldValue) {
         var self = this;//save the this ref
     },
-    unbind: function () {
+    unbind: function (el, binding, vnode) {
         var self = this;//save the this ref
         //添加事件监听
-        self.el.removeEventListener(self.arg, self._handler)
+        el.removeEventListener(binding.arg, el._toggle_event_handler)
     }
 });
