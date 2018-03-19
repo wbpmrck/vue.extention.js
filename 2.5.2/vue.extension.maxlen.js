@@ -9,7 +9,7 @@ Vue.directive('max-len', {
     bind: function (el, binding, vnode) {
         //当DOM获取焦点，更新vm
         el._keydown_handler= function (e) {
-            if (/\d/.test(String.fromCharCode(e.keycode)) && el.value.length == binding.value) {
+            if (/\d/.test(String.fromCharCode(e.keyCode)) && el.value.length == binding.value) {
                 return false
             }
             return true
