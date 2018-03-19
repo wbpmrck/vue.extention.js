@@ -1,6 +1,26 @@
 # vue.extention.js
 Provide more useful filters/directives for vue.js
 
+## NOTICE!
+
+### use simple、directive binding value
+
+if you use `vue 2.0+` ,you `should` use bind value with out `property embed` with `.`
+
+```html
+
+//good 
+<input type="text" v-focus="codeFocus" maxlength="6"/>
+
+
+//error!can not work! 
+<input type="text" v-focus="form.codeFocus" maxlength="6"/>
+
+````
+
+> the reason is,in vue 2.0+,directive can not modify vm values. I found a way to modify simple property,but embed property not working.
+
+
 ##Filters
 * hideString:
     * usage:
